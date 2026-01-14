@@ -1,0 +1,4 @@
+1.myProvider.cpp修改SetUsageScenario函数，原函数已注释。
+2.myProvider.cpp新增GetUnlockScreenPathFromRegistry、TerminateProcessByName、IsProcessRunning函数。
+3.myCredential.cpp注释掉检查和启动进程部分。
+4.myCredential.cpp注释TerminateProcessByName、IsProcessRunning函数

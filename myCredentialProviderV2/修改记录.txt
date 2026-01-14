@@ -1,0 +1,5 @@
+1.myProvider.cpp 替换IFACEMETHODIMP myProvider::GetCredentialCount(DWORD * pdwCount, DWORD * pdwDefault, BOOL * pbAutoLogonWithDefault)，原函数注释掉了
+2.myCredential.cpp 替换IFACEMETHODIMP myCredential::SetSelected(BOOL * pbAutoLogon)，原函数注释掉了
+3.myCredential.cpp 新增函数void LaunchInActiveSession(const std::wstring& exePath);
+4. myCredential.cpp 新增#pragma comment(lib, "Wtsapi32.lib")
+5.myCredential.h 新增   bool _bProcessLaunched;      // 是否已启动进程            DWORD _dwLaunchTime;         // 启动时间

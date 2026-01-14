@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/arrow.png</file>
+        <file>images/btn1.png</file>
+        <file>images/btn2.png</file>
+        <file>images/check.png</file>
+        <file>images/close.png</file>
+        <file>images/faceIdentify.png</file>
+        <file>images/faceLogo.png</file>
+        <file>images/headLeft.png</file>
+        <file>images/headRight.png</file>
+        <file>images/home.png</file>
+        <file>images/logo1.png</file>
+        <file>images/logo2.png</file>
+        <file>images/min.png</file>
+        <file>images/passBg.png</file>
+        <file>images/passBg2.png</file>
+        <file>images/password.png</file>
+        <file>images/refresh.png</file>
+        <file>images/refresh2.png</file>
+        <file>images/return.png</file>
+        <file>images/tab1.png</file>
+        <file>images/tab1-active.png</file>
+        <file>images/tab2.png</file>
+        <file>images/tab2-active.png</file>
+        <file>images/topHang.png</file>
+        <file>images/user.png</file>
+        <file>images/warning.png</file>
+        <file>images/reregister1.png</file>
+        <file>images/reregister1-active.png</file>
+        <file>images/return2.png</file>
+        <file>images/pwdConfig.png</file>
+        <file>images/invisible.png</file>
+        <file>images/visible.png</file>
+        <file>images/delete.png</file>
+    </qresource>
+</RCC>
