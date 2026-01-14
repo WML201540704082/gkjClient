@@ -1,0 +1,20 @@
+# Visual Studio directories and files
+.vs/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build outputs
+bin/
+obj/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Large files
+*.ipch
+*.VC.db
