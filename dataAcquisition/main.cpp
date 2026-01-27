@@ -18,7 +18,8 @@ QString iniLogFile;//logConfig.ini文件完整路径
 QString fingerprint;
 volatile qint64 timeDifference = 0; //本机和服务器的时间差
 //QString urlCommon = "http://172.20.10.3:18084/idevelop-ipc/face";
-QString urlCommon = "http://25.41.34.27/api/idevelop-ipc/face";
+//QString urlCommon = "http://25.41.34.27/api/idevelop-ipc/face";
+QString urlCommon = "http://172.20.10.8:18084/idevelop-ipc/face";
 
 int logType = 4;  //默认日志输出等级
 

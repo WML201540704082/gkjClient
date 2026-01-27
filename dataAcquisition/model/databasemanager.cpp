@@ -162,7 +162,7 @@ bool databaseManager::updatePowerOffTime()
 
 bool databaseManager::queryUnsyncTime(QList<QList<QString> > &timeList)
 {
-    QSqlQuery query("SELECT power_on_time, power_off_time FROM powerOnOff WHERE synced = 0", db);
+    QSqlQuery query("SELECT power_on_time, power_off_time FROM powerOnOff WHERE power_off_time IS NOT NULL AND synced = 0", db);
     if (!query.exec())
     {
         qWarning() << "Error querying powerOnOff data:" << query.lastError().text();

@@ -1,4 +1,4 @@
-﻿#ifndef MYSTRUCT_H
+#ifndef MYSTRUCT_H
 #define MYSTRUCT_H
 
 #include <QString>

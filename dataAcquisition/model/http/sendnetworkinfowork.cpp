@@ -1,4 +1,4 @@
-﻿#include "sendnetworkinfowork.h"
+#include "sendnetworkinfowork.h"
 #include "model/http/gettimestampswork.h"
 #include "model/networkmonitor.h"
 #include "model/myStruct.h"
@@ -13,7 +13,7 @@
 
 sendNetworkInfoWork::sendNetworkInfoWork(QObject *parent) : QObject(parent)
 {
-    
+    monitor = new networkMonitor();
 }
 
 sendNetworkInfoWork::~sendNetworkInfoWork()
@@ -23,6 +23,12 @@ sendNetworkInfoWork::~sendNetworkInfoWork()
         delete client;
         client = nullptr;
     }
+    
+    if(monitor)
+    {
+        delete monitor;
+        monitor = nullptr;
+    }
 }
 
 void sendNetworkInfoWork::recheckTimestamps()
@@ -31,7 +37,7 @@ void sendNetworkInfoWork::recheckTimestamps()
     qDebug()<<"count: "<<count;
     if(count > 1)
     {
-        qDebug()<<"重新对时次数过多，终止尝试";
+        qDebug()<<"Too many recheck attempts, terminating";
         return;
     }
     
@@ -57,7 +63,6 @@ void sendNetworkInfoWork::startSending()
         client = nullptr;
     }
     
-    networkMonitor monitor;
     QList<networkInfo> networkInfoList;
     
     databaseManager2 dbManager2;
@@ -67,11 +72,10 @@ void sendNetworkInfoWork::startSending()
     QString department;
     dbManager2.queryLatestLoginRecord(username, department);
     
-    
-    // 获取TCP连接信息
-    auto tcpConns = monitor.getTcpConnections();
-    for (const auto& conn : tcpConns)
-    {        
+    QList<ConnectionInfo> tcpConns = monitor->getTcpConnections();
+    for (int i = 0; i < tcpConns.size(); i++)
+    {
+        const ConnectionInfo& conn = tcpConns[i];
         networkInfo tmpInfo;
         tmpInfo.protocol = conn.protocol;
         tmpInfo.localAddr = conn.localAddress;
@@ -83,54 +87,100 @@ void sendNetworkInfoWork::startSending()
         networkInfoList.append(tmpInfo);
     }
     
-    if(networkInfoList.isEmpty())
+    QList<ConnectionInfo> udpConns = monitor->getUdpConnections();
+    for (int i = 0; i < udpConns.size(); i++)
     {
-        qDebug()<<"采集到的网络数据为空";
+        const ConnectionInfo& conn = udpConns[i];
+        if (conn.remoteAddress != "*")
+        {
+            networkInfo tmpInfo;
+            tmpInfo.protocol = conn.protocol;
+            tmpInfo.localAddr = conn.localAddress;
+            tmpInfo.localPort = conn.localPort;
+            tmpInfo.remoteAddr = conn.remoteAddress;
+            tmpInfo.remotePort = conn.remotePort;
+            tmpInfo.status = conn.state;
+            
+            networkInfoList.append(tmpInfo);
+        }
+    }
+    
+    // 更新IP访问记录
+    monitor->updateIPAccessRecords();
+    
+    // 获取待发送的已结束连接记录
+    QList<IPAccessRecord> pendingRecords = monitor->getPendingSendRecords();
+    
+    if (pendingRecords.isEmpty())
+    {
+        qDebug() << "No ended connections to send, skipping...";
         return;
     }
     
-    //拼接json
-    QJsonArray networkInfoArray;
-    for(auto networkInfo : networkInfoList)
+    // 创建IP到访问记录的映射，方便快速查找
+    QMap<QString, IPAccessRecord> pendingRecordMap;
+    for (int i = 0; i < pendingRecords.size(); i++)
     {
+        const IPAccessRecord& record = pendingRecords[i];
+        pendingRecordMap.insert(record.ip, record);
+    }
+    
+    QJsonArray networkInfoArray;
+    // 直接基于待发送队列中的记录生成发送数据
+    for (int i = 0; i < pendingRecords.size(); i++)
+    {
+        const IPAccessRecord& record = pendingRecords[i];
         QJsonObject networkInfoObj;
         
-        networkInfoObj["protocol"] = networkInfo.protocol;
-        networkInfoObj["localAddr"] = networkInfo.localAddr;
-        networkInfoObj["localPort"] = networkInfo.localPort;
-        networkInfoObj["remoteAddr"] = networkInfo.remoteAddr;
-        networkInfoObj["remotePort"] = networkInfo.remotePort;
-        networkInfoObj["status"] = networkInfo.status;
+        // 添加基本字段
+        networkInfoObj["protocol"] = "TCP";
+        networkInfoObj["localAddr"] = "";
+        networkInfoObj["localPort"] = 0;
+        networkInfoObj["remoteAddr"] = record.ip;
+        networkInfoObj["remotePort"] = 0;
+        networkInfoObj["status"] = "CLOSED";
+        
+        // 添加username和department字段
+        networkInfoObj["username"] = username;
+        networkInfoObj["department"] = department;
+        
+        // 添加IP访问记录的时间信息
+        networkInfoObj["startTime"] = record.startTime.toString("yyyy-MM-dd hh:mm:ss");
+        networkInfoObj["endTime"] = record.endTime.toString("yyyy-MM-dd hh:mm:ss");
         
         networkInfoArray.append(networkInfoObj);
+        
+        qDebug() << "Adding ended connection for IP:" << record.ip 
+                 << "Start:" << record.startTime.toString("yyyy-MM-dd hh:mm:ss") 
+                 << "End:" << record.endTime.toString("yyyy-MM-dd hh:mm:ss");
+    }
+    
+    if (networkInfoArray.isEmpty())
+    {
+        qDebug() << "No network data for ended connections, skipping...";
+        return;
     }
     
     QJsonObject data;
     data["networkDataList"] = networkInfoArray;
-    data["username"] = username;
-    data["department"] = department;
     
-    //加密
     QJsonDocument doc = QJsonDocument(data);
     QByteArray docBytes = doc.toJson();
      
     mySm4 sm4;
     unsigned char *docData = reinterpret_cast<unsigned char*>(docBytes.data());
-    unsigned long docLen = docBytes.size();  // 不包含结尾的 '\0'
+    unsigned long docLen = docBytes.size();
     QString encryptedStr;
     bool res = sm4.encryptStr(docData, docLen, encryptedStr);
     if(!res)
     {
-        qDebug()<<"Failed to encrypt json";
         return;
     }
     
-    //加密成功继续拼接json
     QJsonObject root;
-    root["method"] = "uploadPowerOnOffTime";
+    root["method"] = "uploadNetworkData";
     root["data"] = encryptedStr;
     
-    //初始化client并发送
     client = new httpClient();
     connect(client, &httpClient::requestSuccess, this, &sendNetworkInfoWork::handleSuccess);
     connect(client, &httpClient::requestError, this, &sendNetworkInfoWork::handleError);
@@ -144,34 +194,27 @@ void sendNetworkInfoWork::startSending()
 void sendNetworkInfoWork::handleSuccess(const QByteArray &response)
 {
     QJsonDocument doc = QJsonDocument::fromJson(response);
-    qDebug()<<doc.isNull();
     if(!doc.isNull())
     {
         QJsonObject obj = doc.object();
         if(obj.value("code").toInt() == 200)
         {
-            qDebug()<<"response success code: "<<obj.value("code").toInt();
+            // 发送成功，清除已发送的记录
+            monitor->clearPendingSendRecords();
         }
-        else if(obj.value("code").toInt() == 10005) //发送的时间戳与服务端时间差超过预设值，重新对时
+        else if(obj.value("code").toInt() == 10005)
         {
-            qDebug()<<"response error code: "<<obj.value("code").toInt();
             recheckTimestamps();
-        }
-        else
-        {
-            qDebug()<<"response error code: "<<obj.value("code").toInt();
         }
     } 
 }
 
 void sendNetworkInfoWork::handleError(const QString &errorString)
 {
-    qDebug()<<"send error: "<<errorString;
 }
 
 void sendNetworkInfoWork::handleFail()
 {
-    qDebug()<<"重传次数过多";
 }
 
 void sendNetworkInfoWork::onCalculateSuccess()

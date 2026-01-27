@@ -1,4 +1,4 @@
-﻿#include "syncwork.h"
+#include "syncwork.h"
 #include "globalVariables.h"
 #include "model/databasemanager.h"
 #include "model/myStruct.h"
@@ -40,6 +40,7 @@ void syncWork::sendSyncData()
     QList<QList<QString>> timeList;
     bool res = dbManager.queryUnsyncTime(timeList);
     qDebug()<<timeList.size();
+    qDebug()<<timeList;
     
     QList<powerOnOffTimeInfo> powerOnOffTimeList;
     for(const auto& time : timeList)
@@ -57,13 +58,17 @@ void syncWork::sendSyncData()
     }
     emit startSendTimeInfo(powerOnOffTimeList);
     
+    if(!sendNetworkInfoThread->isRunning())
+    {
+        sendNetworkInfoThread->start();
+    }
     timer2 = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, [this]()
+    connect(timer2, &QTimer::timeout, this, [this]()
     {
         emit startSendNetworkInfo();
     });
     emit startSendNetworkInfo();
-    timer2->start(300000);  
+    timer2->start(30000);
 }
 
 void syncWork::onIniSyncWork()
@@ -105,7 +110,7 @@ void syncWork::onStartSyncWork()
         emit startGetTimestamps(urlCommon + "/time");
     });
     emit startGetTimestamps(urlCommon + "/time");
-    timer->start(300000); // 对时成功之前，每5分钟尝试一次对时，一次判断网络是否连通   
+    timer->start(300000); // 对时成功之前，每5分钟尝试一次对时，一次判断网络是否连通
 }
 
 void syncWork::receiveCalculateSuccess()

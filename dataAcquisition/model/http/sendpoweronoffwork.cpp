@@ -51,6 +51,10 @@ void sendPowerOnOffWork::startSending(const QList<powerOnOffTimeInfo> &timeList)
 {
     qDebug() << "sendPowerOnOffWork thread id: " << QThread::currentThreadId();
     curTimeList = timeList;
+    if(curTimeList.isEmpty())
+    {
+        return;
+    }
     if(client)
     {
         delete client;
