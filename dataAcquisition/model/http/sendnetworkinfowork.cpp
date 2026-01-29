@@ -194,17 +194,23 @@ void sendNetworkInfoWork::startSending()
 void sendNetworkInfoWork::handleSuccess(const QByteArray &response)
 {
     QJsonDocument doc = QJsonDocument::fromJson(response);
+    qDebug()<<doc.isNull();
     if(!doc.isNull())
     {
         QJsonObject obj = doc.object();
         if(obj.value("code").toInt() == 200)
         {
+            qDebug()<<"response success code: "<<obj.value("code").toInt();
             // 发送成功，清除已发送的记录
             monitor->clearPendingSendRecords();
         }
         else if(obj.value("code").toInt() == 10005)
         {
             recheckTimestamps();
+        }
+        else
+        {
+            qDebug()<<"response error code: "<<obj.value("code").toInt();
         }
     } 
 }
