@@ -6,7 +6,6 @@
 #include <QDebug>
 #include <QThread>
 #include <QCoreApplication>
-
 control::control(QObject *parent) : QObject(parent)
 {
     dbManager.connectToDatabase();
@@ -40,6 +39,10 @@ control::control(QObject *parent) : QObject(parent)
     connect(shutdownMonitor, &ShutdownMonitor::systemShuttingDown, 
             this, &control::onSystemShuttingDown, 
             Qt::DirectConnection); // 直接连接，立即执行
+    
+    // 创建本地桌面应用监控器
+    localAppMonitor = new LocalAppMonitor();
+    qDebug() << "本地桌面应用监控器已初始化";
     
     iniSyncThread();
 }

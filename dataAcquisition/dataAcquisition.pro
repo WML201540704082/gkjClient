@@ -30,8 +30,10 @@ SOURCES += \
     model/databasemanager2.cpp \
     model/http/gettimestampswork.cpp \
     model/http/httpclient.cpp \
+    model/http/sendlocalappinfowork.cpp \
     model/http/sendnetworkinfowork.cpp \
     model/http/sendpoweronoffwork.cpp \
+    model/localappmonitor.cpp \
     model/mysm4.cpp \
     model/networkmonitor.cpp      \
     model/shutdownmonitor.cpp \
@@ -58,8 +60,10 @@ HEADERS += \
     model/databasemanager2.h \
     model/http/gettimestampswork.h \
     model/http/httpclient.h \
+    model/http/sendlocalappinfowork.h \
     model/http/sendnetworkinfowork.h \
     model/http/sendpoweronoffwork.h \
+    model/localappmonitor.h \
     model/myStruct.h \
     model/mysm4.h \
     model/networkmonitor.h \

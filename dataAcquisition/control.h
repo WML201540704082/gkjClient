@@ -1,9 +1,10 @@
-﻿#ifndef CONTROL_H
+#ifndef CONTROL_H
 #define CONTROL_H
 
 #include "model/databasemanager.h"
 #include "model/shutdownmonitor.h"
 #include "model/syncwork.h"
+#include "model/localappmonitor.h"
 
 #include <QObject>
 
@@ -27,6 +28,7 @@ private:
     databaseManager dbManager;
     
     ShutdownMonitor *shutdownMonitor; // 新增：关机监听器（主线程）
+    LocalAppMonitor *localAppMonitor; // 新增：本地桌面应用监控器
     
     syncWork *pSyncWork = nullptr;
     QThread *syncThread = nullptr;

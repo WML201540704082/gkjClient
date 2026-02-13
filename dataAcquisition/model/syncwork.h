@@ -4,6 +4,7 @@
 #include "model/http/gettimestampswork.h"
 #include "model/http/sendpoweronoffwork.h"
 #include "model/http/sendnetworkinfowork.h"
+#include "model/http/sendlocalappinfowork.h"
 
 #include <QObject>
 
@@ -42,6 +43,7 @@ signals:
     void startGetTimestamps(QString url);
     void startSendTimeInfo(const QList<powerOnOffTimeInfo> & timeList);
     void startSendNetworkInfo();
+    void startSendLocalAppInfo();
     
 private:
     getTimestampsWork* timestampsWork = nullptr;
@@ -53,8 +55,12 @@ private:
     sendNetworkInfoWork* networkInfoWork = nullptr;
     QThread* sendNetworkInfoThread = nullptr;
     
+    sendLocalAppInfoWork* localAppInfoWork = nullptr;
+    QThread* sendLocalAppInfoThread = nullptr;
+    
     QTimer *timer = nullptr; 
-    QTimer *timer2 = nullptr; 
+    QTimer *timer2 = nullptr;
+    QTimer *timer3 = nullptr; 
 };
 
 #endif // SYNCWORK_H

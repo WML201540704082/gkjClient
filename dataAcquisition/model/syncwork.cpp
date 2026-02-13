@@ -30,6 +30,19 @@ syncWork::~syncWork()
         delete timer2;
         timer2 = nullptr;
     }
+    
+    if(timer3)
+    {
+        delete timer3;
+        timer3 = nullptr;
+    }
+    
+    if(sendLocalAppInfoThread)
+    {
+        sendLocalAppInfoThread->quit();
+        sendLocalAppInfoThread->wait();
+        delete sendLocalAppInfoThread;
+    }
 }
 
 void syncWork::sendSyncData()
@@ -69,6 +82,18 @@ void syncWork::sendSyncData()
     });
     emit startSendNetworkInfo();
     timer2->start(30000);
+    
+    if(!sendLocalAppInfoThread->isRunning())
+    {
+        sendLocalAppInfoThread->start();
+    }
+    timer3 = new QTimer(this);
+    connect(timer3, &QTimer::timeout, this, [this]()
+    {
+        emit startSendLocalAppInfo();
+    });
+    emit startSendLocalAppInfo();
+    timer3->start(30000);
 }
 
 void syncWork::onIniSyncWork()
@@ -89,12 +114,18 @@ void syncWork::onIniSyncWork()
     qRegisterMetaType<QList<powerOnOffTimeInfo>>("QList<powerOnOffTimeInfo>");
     connect(this, &syncWork::startSendTimeInfo, powerOnOffWork, &sendPowerOnOffWork::startSending);    
     connect(powerOnOffWork, &sendPowerOnOffWork::sendTimeInfoSuccessfully, this, &syncWork::onSendTimeInfoSuccessfully);       
-    
+
     networkInfoWork = new sendNetworkInfoWork();
     sendNetworkInfoThread = new QThread();
     networkInfoWork->moveToThread(sendNetworkInfoThread);
     connect(sendNetworkInfoThread, &QThread::finished, networkInfoWork, &QObject::deleteLater);
     connect(this, &syncWork::startSendNetworkInfo, networkInfoWork, &sendNetworkInfoWork::startSending);        
+
+    localAppInfoWork = new sendLocalAppInfoWork();
+    sendLocalAppInfoThread = new QThread();
+    localAppInfoWork->moveToThread(sendLocalAppInfoThread);
+    connect(sendLocalAppInfoThread, &QThread::finished, localAppInfoWork, &QObject::deleteLater);
+    connect(this, &syncWork::startSendLocalAppInfo, localAppInfoWork, &sendLocalAppInfoWork::startSending);
 }
 
 void syncWork::onStartSyncWork()
