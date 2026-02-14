@@ -36,15 +36,16 @@ QSet<QString> LocalAppMonitor::getRunningProcesses() {
 bool LocalAppMonitor::isDesktopApp(const QString &appName) {
     // 这里可以根据需要添加更多的桌面应用名称
     QStringList desktopApps = {
-        "chrome.exe", "firefox.exe", "msedge.exe", "iexplore.exe",
+        "msedge.exe", "EVCapture.exe", "firefox.exe","chrome.exe",
+        "NWIM.exe", "360Safe.exe", "MongoDBCompass.exe", "Night.exe",
+        "Postman.exe", "SoftMgr.exe", "naccli.exe", "et.exe",
+        "wpp.exe", "wps.exe", "wpspdf.exe", "360Safe.exe",
+        "icallT_d.exe", "智慧办公助手.exe", "iexplore.exe",
         "notepad.exe", "word.exe", "excel.exe", "powerpoint.exe",
         "outlook.exe", "teams.exe", "skype.exe", "zoom.exe",
         "photoshop.exe", "paint.exe", "calc.exe", "mspaint.exe",
-        "Weixin.exe", "Trae CN.exe", "360net.exe", "NWIM.exe",
-        "Xshell.exe", "SuwellReader.exe", "360Safe.exe", "Xftp.exe",
-        "Swcure CRT.exe", "Foxmail.exe", "SoftMgr.exe", "et.exe",
-        "wpp.exe", "wps.exe", "wpspdf.exe", "智慧办公助手.exe",
-        "Night.exe",
+        "Weixin.exe", "Trae CN.exe", "360net.exe", "Xshell.exe",
+        "SuwellReader.exe", "Xftp.exe","Swcure CRT.exe", "Foxmail.exe",
     };
     
     return desktopApps.contains(appName, Qt::CaseInsensitive);
