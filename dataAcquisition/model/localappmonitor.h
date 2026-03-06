@@ -19,7 +19,8 @@ struct LocalAppRecord {
     bool isActive;
 };
 
-class LocalAppMonitor {
+class LocalAppMonitor : public QObject {
+    Q_OBJECT
 public:
     LocalAppMonitor();
     
@@ -31,6 +32,9 @@ public:
     
     void clearPendingSendRecords();
 
+private slots:
+    void updateDesktopApps();
+    
 private:
     bool isDesktopApp(const QString &appName);
     
@@ -41,6 +45,8 @@ private:
     QMap<QString, LocalAppRecord> appRecordMap;
     
     QMap<QString, LocalAppRecord> pendingSendRecords;
+    
+    QStringList desktopApps;
 };
 
 #endif // LOCALAPPMONITOR_H

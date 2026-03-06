@@ -46,7 +46,7 @@ void httpClient::onFinished(QNetworkReply *reply)
     if(reply->error() == QNetworkReply::NoError && reply->isOpen())
     {
         QByteArray responseData = reply->readAll();
-        qDebug() << "responseData: " << responseData;
+//        qDebug() << "responseData: " << responseData;
         emit requestSuccess(responseData);
     }
     else

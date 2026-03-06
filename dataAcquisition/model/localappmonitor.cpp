@@ -1,7 +1,70 @@
 #include "localappmonitor.h"
+#include "model/http/httpclient.h"
+#include "globalVariables.h"
+#include <QEventLoop>
+#include <QTimer>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 LocalAppMonitor::LocalAppMonitor() {
     qDebug() << "LocalAppMonitor initialized";
+//    updateDesktopApps();
+    // 延迟初始化，避免在构造函数中进行耗时的网络操作
+    QTimer::singleShot(1000, this, SLOT(updateDesktopApps()));
+}
+
+void LocalAppMonitor::updateDesktopApps() {
+    httpClient *client = new httpClient();
+    QUrl url = QUrl(urlCommon + "/ipcdesktopapp/list?current=1&size=200");
+    
+    QEventLoop loop;
+    QByteArray responseData;
+    bool requestFinished = false;
+    
+    QObject::connect(client, &httpClient::requestSuccess, [&](const QByteArray &response) {
+        responseData = response;
+        requestFinished = true;
+        loop.quit();
+    });
+    
+    QObject::connect(client, &httpClient::requestError, [&](const QString &errorString) {
+        qDebug() << "Error getting desktop apps:" << errorString;
+        requestFinished = true;
+        loop.quit();
+    });
+    
+    QObject::connect(client, &httpClient::sendFail, [&]() {
+        qDebug() << "Failed to get desktop apps";
+        requestFinished = true;
+        loop.quit();
+    });
+    
+    client->get(url);
+    loop.exec();
+    
+    if (!responseData.isEmpty()) {
+        QJsonDocument doc = QJsonDocument::fromJson(responseData);
+        if (!doc.isNull()) {
+            QJsonObject obj = doc.object();
+            if (obj.contains("data")) {
+                QJsonObject dataObj = obj["data"].toObject();
+                if (dataObj.contains("records")) {
+                    QJsonArray recordsArray = dataObj["records"].toArray();
+                    desktopApps.clear();
+                    for (const QJsonValue &value : recordsArray) {
+                        QJsonObject recordObj = value.toObject();
+                        if (recordObj.contains("mainFileName")) {
+                            desktopApps.append(recordObj["mainFileName"].toString());
+                        }
+                    }
+                    qDebug() << "Updated desktop apps list with" << desktopApps.size() << "apps";
+                }
+            }
+        }
+    }
+    
+    delete client;
 }
 
 QSet<QString> LocalAppMonitor::getRunningProcesses() {
@@ -34,20 +97,6 @@ QSet<QString> LocalAppMonitor::getRunningProcesses() {
 }
 
 bool LocalAppMonitor::isDesktopApp(const QString &appName) {
-    // 这里可以根据需要添加更多的桌面应用名称
-    QStringList desktopApps = {
-        "msedge.exe", "EVCapture.exe", "firefox.exe","chrome.exe",
-        "NWIM.exe", "360Safe.exe", "MongoDBCompass.exe", "Night.exe",
-        "Postman.exe", "SoftMgr.exe", "naccli.exe", "et.exe",
-        "wpp.exe", "wps.exe", "wpspdf.exe", "360Safe.exe",
-        "icallT_d.exe", "智慧办公助手.exe", "iexplore.exe",
-        "notepad.exe", "word.exe", "excel.exe", "powerpoint.exe",
-        "outlook.exe", "teams.exe", "skype.exe", "zoom.exe",
-        "photoshop.exe", "paint.exe", "calc.exe", "mspaint.exe",
-        "Weixin.exe", "Trae CN.exe", "360net.exe", "Xshell.exe",
-        "SuwellReader.exe", "Xftp.exe","Swcure CRT.exe", "Foxmail.exe",
-    };
-    
     return desktopApps.contains(appName, Qt::CaseInsensitive);
 }
 
