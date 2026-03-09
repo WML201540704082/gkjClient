@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/images">
         <file>images/background.png</file>
-        <file>images/logo2.png</file>
-        <file>images/title.png</file>
         <file>images/refresh.png</file>
         <file>images/cam.png</file>
         <file>images/faceIdentify.png</file>
