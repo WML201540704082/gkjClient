@@ -99,21 +99,21 @@ border-image: url(:/images/images/background.png);
           <property name="geometry">
            <rect>
             <x>720</x>
-            <y>30</y>
-            <width>80</width>
-            <height>22</height>
+            <y>10</y>
+            <width>120</width>
+            <height>33</height>
            </rect>
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
-            <height>22</height>
+            <width>120</width>
+            <height>33</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>80</width>
-            <height>22</height>
+            <width>120</width>
+            <height>33</height>
            </size>
           </property>
           <property name="styleSheet">
