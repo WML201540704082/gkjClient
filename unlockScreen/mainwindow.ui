@@ -116,33 +116,15 @@ border-image: url(:/images/images/background.png);
             <height>22</height>
            </size>
           </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>6</pointsize>
-           </font>
-          </property>
           <property name="styleSheet">
            <string notr="true">QPushButton#btn_pwdlogin
 {
-	color: rgb(255, 255, 255);
-	background-color: rgb(28, 95, 245);
- 	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
-    border-radius: 5px; /* 设置圆角 */
+	border-image: url(:/images/images/sysPwd.png);
 }
-QPushButton#btn_pwdlogin:hover {
-    background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
-    border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
-}
-
-QPushButton#btn_pwdlogin:pressed {
-    background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
-    border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
-    padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
-}</string>
+</string>
           </property>
           <property name="text">
-           <string>系统密码登录</string>
+           <string/>
           </property>
          </widget>
         </widget>
