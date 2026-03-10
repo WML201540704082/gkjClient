@@ -8,5 +8,6 @@
         <file>images/delete.png</file>
         <file>images/invisible.png</file>
         <file>images/visible.png</file>
+        <file>images/userPwd.png</file>
     </qresource>
 </RCC>

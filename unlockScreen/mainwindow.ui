@@ -143,26 +143,113 @@ border-image: url(:/images/images/background.png);
          </property>
         </spacer>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_2">
+       <item row="9" column="0">
+        <widget class="QFrame" name="frame_7">
          <property name="minimumSize">
           <size>
-           <width>597</width>
-           <height>88</height>
+           <width>620</width>
+           <height>64</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>597</width>
-           <height>88</height>
+           <width>620</width>
+           <height>64</height>
           </size>
          </property>
-         <property name="styleSheet">
-          <string notr="true">border-image: url(:/images/images/title.png);</string>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
          </property>
-         <property name="text">
-          <string/>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
          </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>16</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>193</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_pwdlogin">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>22</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>22</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton#btn_pwdlogin
+{
+	color: rgb(255, 255, 255);
+	background-color: rgb(28, 95, 245);
+ 	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
+    border-radius: 5px; /* 设置圆角 */
+}
+QPushButton#btn_pwdlogin:hover {
+    background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
+    border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
+}
+
+QPushButton#btn_pwdlogin:pressed {
+    background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
+    border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
+    padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
+}</string>
+            </property>
+            <property name="text">
+             <string>系统密码登录</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>193</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </widget>
        </item>
        <item row="1" column="0">
@@ -1011,50 +1098,6 @@ QPushButton#btn_pwdlogin_2:pressed {
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_userpwdlogin">
-               <property name="minimumSize">
-                <size>
-                 <width>206</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>206</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>微软雅黑</family>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton#btn_userpwdlogin
-{
-	color: rgb(255, 255, 255);
-	background-color: rgb(28, 95, 245);
- 	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
-    border-radius: 5px; /* 设置圆角 */
-}
-QPushButton#btn_userpwdlogin:hover {
-    background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
-    border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
-}
-
-QPushButton#btn_userpwdlogin:pressed {
-    background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
-    border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
-    padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
-}</string>
-               </property>
-               <property name="text">
-                <string>用户密码登录</string>
-               </property>
-              </widget>
-             </item>
-             <item>
               <spacer name="horizontalSpacer_5">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -1073,113 +1116,52 @@ QPushButton#btn_userpwdlogin:pressed {
          </layout>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QFrame" name="frame_7">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
          <property name="minimumSize">
           <size>
-           <width>620</width>
-           <height>64</height>
+           <width>597</width>
+           <height>88</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>620</width>
-           <height>64</height>
+           <width>597</width>
+           <height>88</height>
           </size>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/images/images/title.png);</string>
          </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+         <property name="text">
+          <string/>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>16</number>
-          </property>
-          <item>
-           <spacer name="horizontalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>193</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btn_pwdlogin">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>微软雅黑</family>
-              <pointsize>6</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton#btn_pwdlogin
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="btn_userpwdlogin">
+         <property name="minimumSize">
+          <size>
+           <width>206</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>206</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_userpwdlogin
 {
-	color: rgb(255, 255, 255);
-	background-color: rgb(28, 95, 245);
- 	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
-    border-radius: 5px; /* 设置圆角 */
+	border-image: url(:/images/images/userPwd.png);
 }
-QPushButton#btn_pwdlogin:hover {
-    background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
-    border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
-}
-
-QPushButton#btn_pwdlogin:pressed {
-    background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
-    border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
-    padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
-}</string>
-            </property>
-            <property name="text">
-             <string>系统密码登录</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>193</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
         </widget>
        </item>
       </layout>

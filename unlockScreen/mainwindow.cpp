@@ -365,12 +365,10 @@ void MainWindow::on_btn_userpwdlogin_clicked()
 {
     if(ui->stackedWidget_2->currentIndex() == 0)
     {
-        ui->btn_userpwdlogin->setText("用户人脸登录");
         ui->stackedWidget_2->setCurrentIndex(1);
     }
     else if(ui->stackedWidget_2->currentIndex() == 1)
     {
-        ui->btn_userpwdlogin->setText("用户密码登录");
         ui->stackedWidget_2->setCurrentIndex(0);
     }
 }
