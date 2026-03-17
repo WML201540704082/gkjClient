@@ -360,10 +360,12 @@ void MainWindow::on_btn_userpwdlogin_clicked()
     if(ui->stackedWidget_2->currentIndex() == 0)
     {
         ui->stackedWidget_2->setCurrentIndex(1);
+        ui->btn_userpwdlogin->setStyleSheet("QPushButton#btn_userpwdlogin\n{\n\tborder-image: url(:/images/images/userFace.png);\n}\n");
     }
     else if(ui->stackedWidget_2->currentIndex() == 1)
     {
         ui->stackedWidget_2->setCurrentIndex(0);
+        ui->btn_userpwdlogin->setStyleSheet("QPushButton#btn_userpwdlogin\n{\n\tborder-image: url(:/images/images/userPwd.png);\n}\n");
     }
 }
 

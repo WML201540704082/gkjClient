@@ -9,6 +9,7 @@
         <file>images/invisible.png</file>
         <file>images/visible.png</file>
         <file>images/userPwd.png</file>
+        <file>images/userFace.png</file>
         <file>images/sysPwd.png</file>
     </qresource>
 </RCC>
