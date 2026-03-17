@@ -621,13 +621,13 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                 <property name="minimumSize">
                  <size>
                   <width>900</width>
-                  <height>600</height>
+                  <height>340</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>900</width>
-                  <height>600</height>
+                  <height>340</height>
                  </size>
                 </property>
                 <property name="frameShape">
@@ -652,6 +652,25 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                  <property name="spacing">
                   <number>0</number>
                  </property>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_6">
+                   <property name="minimumSize">
+                    <size>
+                     <width>240</width>
+                     <height>240</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>240</width>
+                     <height>240</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="0" column="2">
                   <spacer name="horizontalSpacer_9">
                    <property name="orientation">
@@ -683,13 +702,13 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                    <property name="minimumSize">
                     <size>
                      <width>900</width>
-                     <height>117</height>
+                     <height>150</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
                      <width>600</width>
-                     <height>117</height>
+                     <height>150</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -714,36 +733,40 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                     <property name="spacing">
                      <number>6</number>
                     </property>
-                    <item row="1" column="2">
-                     <widget class="myPwdLinEdit" name="lineEdit_pwd">
+                    <item row="3" column="2">
+                     <spacer name="verticalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="5" column="2">
+                     <widget class="QComboBox" name="comboBox">
                       <property name="minimumSize">
                        <size>
                         <width>240</width>
-                        <height>22</height>
+                        <height>26</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
                         <width>240</width>
-                        <height>22</height>
+                        <height>26</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <family>微软雅黑</family>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="echoMode">
-                       <enum>QLineEdit::Password</enum>
-                      </property>
-                      <property name="clearButtonEnabled">
-                       <bool>false</bool>
+                      <property name="styleSheet">
+                       <string notr="true">font-size: 8px;</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="0">
-                     <spacer name="horizontalSpacer_10">
+                    <item row="0" column="4">
+                     <spacer name="horizontalSpacer_11">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
                       </property>
@@ -755,7 +778,7 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                       </property>
                      </spacer>
                     </item>
-                    <item row="0" column="1">
+                    <item row="5" column="1">
                      <widget class="QLabel" name="label_account">
                       <property name="minimumSize">
                        <size>
@@ -783,8 +806,8 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="4">
-                     <spacer name="horizontalSpacer_11">
+                    <item row="0" column="0">
+                     <spacer name="horizontalSpacer_10">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
                       </property>
@@ -796,23 +819,54 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                       </property>
                      </spacer>
                     </item>
-                    <item row="0" column="2">
-                     <widget class="QComboBox" name="comboBox">
+                    <item row="6" column="3">
+                     <widget class="QPushButton" name="btn_pwdlogin_2">
                       <property name="minimumSize">
                        <size>
-                        <width>240</width>
-                        <height>22</height>
+                        <width>50</width>
+                        <height>26</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>240</width>
-                        <height>22</height>
+                        <width>50</width>
+                        <height>26</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>微软雅黑</family>
+                        <pointsize>-1</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#btn_pwdlogin_2
+{
+	color: rgb(255, 255, 255);
+	background-color: rgb(28, 95, 245);
+ 	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
+    border-radius: 5px; /* 设置圆角 */
+	font-size: 9px;
+}
+QPushButton#btn_pwdlogin_2:hover {
+    background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
+    border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
+	font-size: 9px;
+}
+
+QPushButton#btn_pwdlogin_2:pressed {
+    background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
+    border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
+    padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
+	font-size: 9px;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>登录</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="1">
+                    <item row="6" column="1">
                      <widget class="QLabel" name="label_pwd">
                       <property name="minimumSize">
                        <size>
@@ -840,86 +894,38 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="3">
-                     <widget class="QPushButton" name="btn_pwdlogin_2">
+                    <item row="6" column="2">
+                     <widget class="myPwdLinEdit" name="lineEdit_pwd">
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>22</height>
+                        <width>240</width>
+                        <height>26</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>22</height>
+                        <width>240</width>
+                        <height>26</height>
                        </size>
                       </property>
                       <property name="font">
                        <font>
                         <family>微软雅黑</family>
-                        <pointsize>-1</pointsize>
+                        <pointsize>8</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">QPushButton#btn_pwdlogin_2
-{
-	color: rgb(255, 255, 255);
-	background-color: rgb(28, 95, 245);
- 	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
-    border-radius: 5px; /* 设置圆角 */
-	font-size: 8px;
-}
-QPushButton#btn_pwdlogin_2:hover {
-    background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
-    border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
-	font-size: 8px;
-}
-
-QPushButton#btn_pwdlogin_2:pressed {
-    background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
-    border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
-    padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
-	font-size: 8px;
-}</string>
+                       <string notr="true"/>
                       </property>
-                      <property name="text">
-                       <string>登录</string>
+                      <property name="echoMode">
+                       <enum>QLineEdit::Password</enum>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>false</bool>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="2">
-                     <spacer name="verticalSpacer_2">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
                    </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_6">
-                   <property name="minimumSize">
-                    <size>
-                     <width>240</width>
-                     <height>240</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>240</width>
-                     <height>240</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
                   </widget>
                  </item>
                 </layout>

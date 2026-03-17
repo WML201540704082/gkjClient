@@ -132,11 +132,11 @@ void MainWindow::screenAdapter()
     ui->page_2->setMinimumSize(900 * w_fx, 600 * h_fx);
     ui->page_2->setMaximumSize(900 * w_fx, 600 * h_fx);
     
-    ui->frame_8->setMinimumSize(900 * w_fx, 600 * h_fx);
-    ui->frame_8->setMaximumSize(900 * w_fx, 600 * h_fx);
+    ui->frame_8->setMinimumSize(900 * w_fx, 340 * h_fx);
+    ui->frame_8->setMaximumSize(900 * w_fx, 340 * h_fx);
     
-    ui->frame_9->setMinimumSize(900 * w_fx, 117 * h_fx);
-    ui->frame_9->setMaximumSize(900 * w_fx, 117 * h_fx);
+    ui->frame_9->setMinimumSize(900 * w_fx, 150 * h_fx);
+    ui->frame_9->setMaximumSize(900 * w_fx, 150 * h_fx);
     
     ui->gridLayout_7->setHorizontalSpacing(6 * w_fx);
     ui->gridLayout_7->setVerticalSpacing(6 * w_fx);
@@ -156,20 +156,20 @@ void MainWindow::screenAdapter()
     font.setPointSize(12 * w_fx);
     ui->label_pwd->setFont(font);
     
-    ui->comboBox->setMinimumSize(240 * w_fx, 22 * h_fx);
-    ui->comboBox->setMaximumSize(240 * w_fx, 22 * h_fx);
+    ui->comboBox->setMinimumSize(240 * w_fx, 26 * h_fx);
+    ui->comboBox->setMaximumSize(240 * w_fx, 26 * h_fx);
     font = ui->comboBox->font();
     font.setPointSize(8 * w_fx);
     ui->comboBox->setFont(font);
     
-    ui->lineEdit_pwd->setMinimumSize(240 * w_fx, 22 * h_fx);
-    ui->lineEdit_pwd->setMaximumSize(240 * w_fx, 22 * h_fx);
+    ui->lineEdit_pwd->setMinimumSize(240 * w_fx, 26 * h_fx);
+    ui->lineEdit_pwd->setMaximumSize(240 * w_fx, 26 * h_fx);
     font = ui->lineEdit_pwd->font();
     font.setPointSize(8 * w_fx);
     ui->lineEdit_pwd->setFont(font);
     
-    ui->btn_pwdlogin_2->setMinimumSize(50 * w_fx, 22 * h_fx);
-    ui->btn_pwdlogin_2->setMaximumSize(50 * w_fx, 22 * h_fx);
+    ui->btn_pwdlogin_2->setMinimumSize(50 * w_fx, 26 * h_fx);
+    ui->btn_pwdlogin_2->setMaximumSize(50 * w_fx, 26 * h_fx);
     
     ui->btn_userpwdlogin->setMaximumSize(206 * w_fx, 48 * h_fx);
     ui->btn_userpwdlogin->setMinimumSize(206 * w_fx, 48 * h_fx);
