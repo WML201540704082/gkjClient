@@ -155,7 +155,7 @@ border-image: url(:/images/images/background.png);
              <enum>QFrame::NoFrame</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="minimumSize">
@@ -590,14 +590,14 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
             <widget class="QWidget" name="page_2">
              <property name="minimumSize">
               <size>
-               <width>600</width>
-               <height>400</height>
+               <width>900</width>
+               <height>600</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>600</width>
-               <height>400</height>
+               <width>900</width>
+               <height>600</height>
               </size>
              </property>
              <layout class="QGridLayout" name="gridLayout_5">
@@ -620,14 +620,14 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                <widget class="QFrame" name="frame_8">
                 <property name="minimumSize">
                  <size>
-                  <width>600</width>
-                  <height>400</height>
+                  <width>900</width>
+                  <height>600</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>600</width>
-                  <height>400</height>
+                  <width>900</width>
+                  <height>600</height>
                  </size>
                 </property>
                 <property name="frameShape">
@@ -665,11 +665,24 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                    </property>
                   </spacer>
                  </item>
+                 <item row="0" column="0">
+                  <spacer name="horizontalSpacer_8">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
                  <item row="1" column="0" colspan="3">
                   <widget class="QFrame" name="frame_9">
                    <property name="minimumSize">
                     <size>
-                     <width>600</width>
+                     <width>900</width>
                      <height>117</height>
                     </size>
                    </property>
@@ -762,6 +775,9 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                         <pointsize>8</pointsize>
                        </font>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255, 255, 255)</string>
+                      </property>
                       <property name="text">
                        <string>用户名</string>
                       </property>
@@ -816,6 +832,9 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                         <pointsize>8</pointsize>
                        </font>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255, 255, 255)</string>
+                      </property>
                       <property name="text">
                        <string>密码</string>
                       </property>
@@ -838,7 +857,7 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                       <property name="font">
                        <font>
                         <family>微软雅黑</family>
-                        <pointsize>8</pointsize>
+                        <pointsize>-1</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -848,16 +867,19 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
 	background-color: rgb(28, 95, 245);
  	border: 2px solid rgb(28, 95, 245); /* 为了更好地显示边框 */
     border-radius: 5px; /* 设置圆角 */
+	font-size: 8px;
 }
 QPushButton#btn_pwdlogin_2:hover {
     background-color: rgb(56, 125, 255); /* 鼠标悬浮时改变背景色 */
     border: 2px solid rgb(56, 125, 255); /* 悬浮时边框颜色同步变化 */
+	font-size: 8px;
 }
 
 QPushButton#btn_pwdlogin_2:pressed {
     background-color: rgb(15, 55, 215); /* 按钮被点击时的背景色 */
     border: 2px solid rgb(15, 55, 215); /* 按钮被点击时的边框颜色 */
     padding-top: 2px; /* 可选：让按钮看起来稍微下沉 */
+	font-size: 8px;
 }</string>
                       </property>
                       <property name="text">
@@ -880,19 +902,6 @@ QPushButton#btn_pwdlogin_2:pressed {
                     </item>
                    </layout>
                   </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <spacer name="horizontalSpacer_8">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
                  </item>
                  <item row="0" column="1">
                   <widget class="QLabel" name="label_6">

@@ -129,14 +129,14 @@ void MainWindow::screenAdapter()
     
     ui->verticalLayout_3->setSpacing(10 * h_fx);
     
-    ui->page_2->setMinimumSize(600 * w_fx, 400 * h_fx);
-    ui->page_2->setMaximumSize(600 * w_fx, 400 * h_fx);
+    ui->page_2->setMinimumSize(900 * w_fx, 600 * h_fx);
+    ui->page_2->setMaximumSize(900 * w_fx, 600 * h_fx);
     
-    ui->frame_8->setMinimumSize(600 * w_fx, 400 * h_fx);
-    ui->frame_8->setMaximumSize(600 * w_fx, 400 * h_fx);
+    ui->frame_8->setMinimumSize(900 * w_fx, 600 * h_fx);
+    ui->frame_8->setMaximumSize(900 * w_fx, 600 * h_fx);
     
-    ui->frame_9->setMinimumSize(600 * w_fx, 117 * h_fx);
-    ui->frame_9->setMaximumSize(600 * w_fx, 117 * h_fx);
+    ui->frame_9->setMinimumSize(900 * w_fx, 117 * h_fx);
+    ui->frame_9->setMaximumSize(900 * w_fx, 117 * h_fx);
     
     ui->gridLayout_7->setHorizontalSpacing(6 * w_fx);
     ui->gridLayout_7->setVerticalSpacing(6 * w_fx);
@@ -147,13 +147,13 @@ void MainWindow::screenAdapter()
     ui->label_account->setMinimumSize(50 * w_fx, 22 * h_fx);
     ui->label_account->setMaximumSize(50 * w_fx, 22 * h_fx);
     font = ui->label_account->font();
-    font.setPointSize(8 * w_fx);
+    font.setPointSize(12 * w_fx);
     ui->label_account->setFont(font);
     
     ui->label_pwd->setMinimumSize(50 * w_fx, 22 * h_fx);
     ui->label_pwd->setMaximumSize(50 * w_fx, 22 * h_fx);
     font = ui->label_pwd->font();
-    font.setPointSize(8 * w_fx);
+    font.setPointSize(12 * w_fx);
     ui->label_pwd->setFont(font);
     
     ui->comboBox->setMinimumSize(240 * w_fx, 22 * h_fx);
