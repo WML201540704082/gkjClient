@@ -62,17 +62,17 @@ void MainWindow::screenAdapter()
     ui->gridLayout_2->setVerticalSpacing(67 * h_fx);
     
     
-    ui->frame_3->setMinimumSize(900 * w_fx, 600 * h_fx);
-    ui->frame_3->setMaximumSize(900 * w_fx, 600 * h_fx);
+    ui->frame_3->setMinimumSize(700 * w_fx, 600 * h_fx);
+    ui->frame_3->setMaximumSize(700 * w_fx, 600 * h_fx);
     
-    ui->stackedWidget_2->setMinimumSize(900 * w_fx, 600 * h_fx);
-    ui->stackedWidget_2->setMaximumSize(900 * w_fx, 600 * h_fx);
+    ui->stackedWidget_2->setMinimumSize(700 * w_fx, 600 * h_fx);
+    ui->stackedWidget_2->setMaximumSize(700 * w_fx, 600 * h_fx);
     
     ui->verticalLayout->setContentsMargins(9 * w_fx, 0 * h_fx, 9 * w_fx, 9 * h_fx);
     ui->verticalLayout->setSpacing(16 * h_fx);
     
-    ui->frame_4->setMinimumSize(670 * w_fx, 32 * h_fx);
-    ui->frame_4->setMaximumSize(670 * w_fx, 32 * h_fx);
+    ui->frame_4->setMinimumSize(600 * w_fx, 32 * h_fx);
+    ui->frame_4->setMaximumSize(600 * w_fx, 32 * h_fx);
     
     ui->horizontalLayout_2->setSpacing(6 * w_fx);
     
@@ -88,32 +88,32 @@ void MainWindow::screenAdapter()
     ui->btn_refresh->setMinimumSize(30 * w_fx, 30 * h_fx);
     ui->btn_refresh->setMaximumSize(30 * w_fx, 30 * h_fx);
     
-    ui->frame_5->setMinimumSize(900 * w_fx, 558 * h_fx);
-    ui->frame_5->setMaximumSize(900 * w_fx, 558 * h_fx);
+    ui->frame_5->setMinimumSize(700 * w_fx, 550 * h_fx);
+    ui->frame_5->setMaximumSize(700 * w_fx, 550 * h_fx);
     
     ui->gridLayout_3->setContentsMargins(9 * w_fx, 0 * h_fx, 9 * w_fx, 24 * h_fx);
     ui->gridLayout_3->setVerticalSpacing(16 * h_fx);
     
-    ui->stackedWidget->setMinimumSize(520 * w_fx, 480 * h_fx);
-    ui->stackedWidget->setMaximumSize(520 * w_fx, 480 * h_fx);
+    ui->stackedWidget->setMinimumSize(420 * w_fx, 480 * h_fx);
+    ui->stackedWidget->setMaximumSize(420 * w_fx, 480 * h_fx);
     
-    ui->page1->setMinimumSize(500 * w_fx, 480 * h_fx);
-    ui->page1->setMaximumSize(500 * w_fx, 480 * h_fx);
+    ui->page1->setMinimumSize(420 * w_fx, 480 * h_fx);
+    ui->page1->setMaximumSize(420 * w_fx, 480 * h_fx);
     
-    ui->label_4->setMinimumSize(480 * w_fx, 32 * h_fx);
-    ui->label_4->setMaximumSize(480 * w_fx, 32 * h_fx);
+    ui->label_4->setMinimumSize(420 * w_fx, 32 * h_fx);
+    ui->label_4->setMaximumSize(420 * w_fx, 32 * h_fx);
     font = ui->label_4->font();
     font.setPointSize(20 * w_fx);
     ui->label_4->setFont(font);
     
-    ui->btn_img->setMinimumSize(500 * w_fx, 580 * w_fx);
-    ui->btn_img->setMaximumSize(500 * w_fx, 580 * w_fx);
+    ui->btn_img->setMinimumSize(420 * w_fx, 480 * w_fx);
+    ui->btn_img->setMaximumSize(420 * w_fx, 480 * w_fx);
     font = ui->btn_img->font();
     font.setPointSize(10 * w_fx);
     ui->btn_img->setFont(font);
     
-    ui->page2->setMinimumSize(520 * w_fx, 600 * h_fx);
-    ui->page2->setMaximumSize(520 * w_fx, 600 * h_fx);
+    ui->page2->setMinimumSize(420 * w_fx, 480 * h_fx);
+    ui->page2->setMaximumSize(420 * w_fx, 480 * h_fx);
     
     ui->page3->setMinimumSize(520 * w_fx, 600 * h_fx);
     ui->page3->setMaximumSize(520 * w_fx, 600 * h_fx);
@@ -124,19 +124,19 @@ void MainWindow::screenAdapter()
     ui->frame_6->setMinimumSize(600 * w_fx, 64 * h_fx);
     ui->frame_6->setMaximumSize(600 * w_fx, 64 * h_fx);
     
-    ui->page->setMinimumSize(900 * w_fx, 600 * h_fx);
-    ui->page->setMaximumSize(900 * w_fx, 600 * h_fx);
+    ui->page->setMinimumSize(700 * w_fx, 560 * h_fx);
+    ui->page->setMaximumSize(700 * w_fx, 560 * h_fx);
     
     ui->verticalLayout_3->setSpacing(10 * h_fx);
     
-    ui->page_2->setMinimumSize(900 * w_fx, 600 * h_fx);
-    ui->page_2->setMaximumSize(900 * w_fx, 600 * h_fx);
+    ui->page_2->setMinimumSize(700 * w_fx, 600 * h_fx);
+    ui->page_2->setMaximumSize(700 * w_fx, 600 * h_fx);
     
-    ui->frame_8->setMinimumSize(900 * w_fx, 340 * h_fx);
-    ui->frame_8->setMaximumSize(900 * w_fx, 340 * h_fx);
+    ui->frame_8->setMinimumSize(700 * w_fx, 340 * h_fx);
+    ui->frame_8->setMaximumSize(700 * w_fx, 340 * h_fx);
     
-    ui->frame_9->setMinimumSize(900 * w_fx, 150 * h_fx);
-    ui->frame_9->setMaximumSize(900 * w_fx, 150 * h_fx);
+    ui->frame_9->setMinimumSize(700 * w_fx, 150 * h_fx);
+    ui->frame_9->setMaximumSize(700 * w_fx, 150 * h_fx);
     
     ui->gridLayout_7->setHorizontalSpacing(6 * w_fx);
     ui->gridLayout_7->setVerticalSpacing(6 * w_fx);

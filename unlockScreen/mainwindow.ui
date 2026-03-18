@@ -108,13 +108,13 @@ border-image: url(:/images/images/background.png);
         <widget class="QFrame" name="frame_3">
          <property name="minimumSize">
           <size>
-           <width>900</width>
+           <width>700</width>
            <height>600</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>900</width>
+           <width>700</width>
            <height>600</height>
           </size>
          </property>
@@ -138,13 +138,13 @@ border-image: url(:/images/images/background.png);
            <widget class="QStackedWidget" name="stackedWidget_2">
             <property name="minimumSize">
              <size>
-              <width>900</width>
+              <width>700</width>
               <height>600</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>900</width>
+              <width>700</width>
               <height>600</height>
              </size>
             </property>
@@ -160,14 +160,14 @@ border-image: url(:/images/images/background.png);
             <widget class="QWidget" name="page">
              <property name="minimumSize">
               <size>
-               <width>900</width>
-               <height>600</height>
+               <width>700</width>
+               <height>560</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>900</width>
-               <height>600</height>
+               <width>700</width>
+               <height>560</height>
               </size>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -190,13 +190,13 @@ border-image: url(:/images/images/background.png);
                <widget class="QFrame" name="frame_4">
                 <property name="minimumSize">
                  <size>
-                  <width>670</width>
+                  <width>600</width>
                   <height>32</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>670</width>
+                  <width>600</width>
                   <height>32</height>
                  </size>
                 </property>
@@ -342,14 +342,14 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                <widget class="QFrame" name="frame_5">
                 <property name="minimumSize">
                  <size>
-                  <width>900</width>
-                  <height>558</height>
+                  <width>700</width>
+                  <height>550</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>900</width>
-                  <height>558</height>
+                  <width>700</width>
+                  <height>550</height>
                  </size>
                 </property>
                 <property name="frameShape">
@@ -372,13 +372,13 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                   <widget class="QLabel" name="label_4">
                    <property name="minimumSize">
                     <size>
-                     <width>480</width>
+                     <width>420</width>
                      <height>32</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>480</width>
+                     <width>420</width>
                      <height>32</height>
                     </size>
                    </property>
@@ -406,14 +406,14 @@ letter-spacing: 14px;</string>
                   <widget class="QStackedWidget" name="stackedWidget">
                    <property name="minimumSize">
                     <size>
-                     <width>520</width>
-                     <height>600</height>
+                     <width>420</width>
+                     <height>480</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>520</width>
-                     <height>600</height>
+                     <width>420</width>
+                     <height>480</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -426,19 +426,19 @@ letter-spacing: 14px;</string>
                     <enum>QFrame::Raised</enum>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>1</number>
                    </property>
                    <widget class="QWidget" name="page1">
                     <property name="minimumSize">
                      <size>
-                      <width>500</width>
-                      <height>600</height>
+                      <width>420</width>
+                      <height>480</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>500</width>
-                      <height>600</height>
+                      <width>420</width>
+                      <height>480</height>
                      </size>
                     </property>
                     <property name="styleSheet">
@@ -464,14 +464,14 @@ letter-spacing: 14px;</string>
                       <widget class="QPushButton" name="btn_img">
                        <property name="minimumSize">
                         <size>
-                         <width>500</width>
-                         <height>580</height>
+                         <width>420</width>
+                         <height>480</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>500</width>
-                         <height>580</height>
+                         <width>420</width>
+                         <height>480</height>
                         </size>
                        </property>
                        <property name="styleSheet">
@@ -489,14 +489,14 @@ letter-spacing: 14px;</string>
                    <widget class="QWidget" name="page2">
                     <property name="minimumSize">
                      <size>
-                      <width>360</width>
-                      <height>360</height>
+                      <width>420</width>
+                      <height>480</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>360</width>
-                      <height>360</height>
+                      <width>420</width>
+                      <height>480</height>
                      </size>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_4">
@@ -519,14 +519,14 @@ letter-spacing: 14px;</string>
                       <widget class="QWidget" name="widget_cam" native="true">
                        <property name="minimumSize">
                         <size>
-                         <width>0</width>
-                         <height>0</height>
+                         <width>200</width>
+                         <height>280</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>16777215</width>
-                         <height>16777215</height>
+                         <width>200</width>
+                         <height>280</height>
                         </size>
                        </property>
                       </widget>
@@ -593,13 +593,13 @@ letter-spacing: 14px;</string>
             <widget class="QWidget" name="page_2">
              <property name="minimumSize">
               <size>
-               <width>900</width>
+               <width>700</width>
                <height>600</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>900</width>
+               <width>700</width>
                <height>600</height>
               </size>
              </property>
@@ -623,13 +623,13 @@ letter-spacing: 14px;</string>
                <widget class="QFrame" name="frame_8">
                 <property name="minimumSize">
                  <size>
-                  <width>900</width>
+                  <width>700</width>
                   <height>340</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>900</width>
+                  <width>700</width>
                   <height>340</height>
                  </size>
                 </property>
@@ -704,7 +704,7 @@ letter-spacing: 14px;</string>
                   <widget class="QFrame" name="frame_9">
                    <property name="minimumSize">
                     <size>
-                     <width>900</width>
+                     <width>700</width>
                      <height>150</height>
                     </size>
                    </property>
