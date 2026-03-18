@@ -76,8 +76,8 @@ void MainWindow::screenAdapter()
     
     ui->horizontalLayout_2->setSpacing(6 * w_fx);
     
-    ui->label_3->setMinimumSize(120 * w_fx, 30 * h_fx);
-    ui->label_3->setMaximumSize(120 * w_fx, 30 * h_fx);
+    ui->label_3->setMinimumSize(100 * w_fx, 30 * h_fx);
+    ui->label_3->setMaximumSize(100 * w_fx, 30 * h_fx);
     QFont font = ui->label_3->font();
     font.setPointSize(12 * w_fx);
     ui->label_3->setFont(font);

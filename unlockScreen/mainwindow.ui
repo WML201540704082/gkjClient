@@ -252,28 +252,28 @@ border-image: url(:/images/images/background.png);
                   <widget class="QLabel" name="label_3">
                    <property name="minimumSize">
                     <size>
-                     <width>120</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>120</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="font">
                     <font>
                      <family>Arial</family>
-                     <pointsize>10</pointsize>
+                     <pointsize>-1</pointsize>
                      <weight>50</weight>
                      <italic>false</italic>
                      <bold>false</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font: 10pt &quot;Arial&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true">font-size: 11px;
+color: rgba(167, 211, 243);</string>
                    </property>
                    <property name="text">
                     <string>相机状态</string>
@@ -298,7 +298,10 @@ color: rgb(255, 255, 255);</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true"/>
+                    <string notr="true">background-color: rgba(167, 211, 243, 0.1);
+border: 0px solid rgba(167, 211, 243, 0.1);
+color: rgba(167, 211, 243, 0.7);
+font-size: 11px;</string>
                    </property>
                    <property name="frame">
                     <bool>true</bool>
@@ -390,8 +393,8 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgb(212, 235, 255);
-font-size: 9px;
+                    <string notr="true">color: rgba(167, 211, 243, 0.7);
+font-size: 11px;
 letter-spacing: 14px;</string>
                    </property>
                    <property name="text">
@@ -426,7 +429,7 @@ letter-spacing: 14px;</string>
                     <enum>QFrame::Raised</enum>
                    </property>
                    <property name="currentIndex">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="page1">
                     <property name="minimumSize">
