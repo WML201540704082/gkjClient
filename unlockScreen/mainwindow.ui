@@ -155,7 +155,7 @@ border-image: url(:/images/images/background.png);
              <enum>QFrame::NoFrame</enum>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="minimumSize">
@@ -385,14 +385,17 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                    <property name="font">
                     <font>
                      <family>微软雅黑</family>
-                     <pointsize>10</pointsize>
+                     <pointsize>-1</pointsize>
+                     <kerning>false</kerning>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);</string>
+                    <string notr="true">color: rgb(212, 235, 255);
+font-size: 9px;
+letter-spacing: 14px;</string>
                    </property>
                    <property name="text">
-                    <string>（请点击图片开始人脸识别）</string>
+                    <string>请点击图片开始人脸识别</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
