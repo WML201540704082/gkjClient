@@ -389,7 +389,7 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgb(55, 76, 120);</string>
+                    <string notr="true">color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="text">
                     <string>（请点击图片开始人脸识别）</string>
