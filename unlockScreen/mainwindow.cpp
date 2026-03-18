@@ -71,19 +71,19 @@ void MainWindow::screenAdapter()
     ui->verticalLayout->setContentsMargins(9 * w_fx, 0 * h_fx, 9 * w_fx, 9 * h_fx);
     ui->verticalLayout->setSpacing(16 * h_fx);
     
-    ui->frame_4->setMinimumSize(600 * w_fx, 32 * h_fx);
-    ui->frame_4->setMaximumSize(600 * w_fx, 32 * h_fx);
+    ui->frame_4->setMinimumSize(580 * w_fx, 32 * h_fx);
+    ui->frame_4->setMaximumSize(580 * w_fx, 32 * h_fx);
     
     ui->horizontalLayout_2->setSpacing(6 * w_fx);
     
-    ui->label_3->setMinimumSize(100 * w_fx, 30 * h_fx);
-    ui->label_3->setMaximumSize(100 * w_fx, 30 * h_fx);
+    ui->label_3->setMinimumSize(90 * w_fx, 30 * h_fx);
+    ui->label_3->setMaximumSize(90 * w_fx, 30 * h_fx);
     QFont font = ui->label_3->font();
     font.setPointSize(12 * w_fx);
     ui->label_3->setFont(font);
     
-    ui->lineEdit_status->setMinimumSize(346 * w_fx, 30 * h_fx);
-    ui->lineEdit_status->setMaximumSize(346 * w_fx, 30 * h_fx);
+    ui->lineEdit_status->setMinimumSize(340 * w_fx, 30 * h_fx);
+    ui->lineEdit_status->setMaximumSize(340 * w_fx, 30 * h_fx);
     
     ui->btn_refresh->setMinimumSize(30 * w_fx, 30 * h_fx);
     ui->btn_refresh->setMaximumSize(30 * w_fx, 30 * h_fx);
