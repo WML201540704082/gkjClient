@@ -330,6 +330,7 @@ void MainWindow::on_btn_img_clicked()
         return;
     }
     ui->stackedWidget->setCurrentIndex(1);
+    ui->label_4->hide();
     
 //    iniCamera();
     openCamera();
