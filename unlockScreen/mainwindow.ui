@@ -7,8 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1119</height>
+    <height>1080</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -37,6 +49,12 @@ border-image: url(:/images/images/background.png);
         <height>100</height>
        </size>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -46,22 +64,22 @@ border-image: url(:/images/images/background.png);
       <widget class="QPushButton" name="btn_pwdlogin">
        <property name="geometry">
         <rect>
-         <x>810</x>
-         <y>20</y>
+         <x>1630</x>
+         <y>30</y>
          <width>135</width>
-         <height>25</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
          <width>135</width>
-         <height>25</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>135</width>
-         <height>25</height>
+         <height>30</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -79,6 +97,12 @@ border-image: url(:/images/images/background.png);
     </item>
     <item>
      <widget class="QFrame" name="frame_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -108,14 +132,14 @@ border-image: url(:/images/images/background.png);
         <widget class="QFrame" name="frame_3">
          <property name="minimumSize">
           <size>
-           <width>700</width>
+           <width>600</width>
            <height>600</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>700</width>
-           <height>600</height>
+           <width>600</width>
+           <height>550</height>
           </size>
          </property>
          <property name="frameShape">
@@ -138,13 +162,13 @@ border-image: url(:/images/images/background.png);
            <widget class="QStackedWidget" name="stackedWidget_2">
             <property name="minimumSize">
              <size>
-              <width>700</width>
+              <width>600</width>
               <height>600</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>700</width>
+              <width>600</width>
               <height>600</height>
              </size>
             </property>
@@ -155,19 +179,19 @@ border-image: url(:/images/images/background.png);
              <enum>QFrame::NoFrame</enum>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="minimumSize">
               <size>
-               <width>700</width>
-               <height>560</height>
+               <width>600</width>
+               <height>580</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>700</width>
-               <height>560</height>
+               <width>600</width>
+               <height>580</height>
               </size>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -252,13 +276,13 @@ border-image: url(:/images/images/background.png);
                   <widget class="QLabel" name="label_3">
                    <property name="minimumSize">
                     <size>
-                     <width>90</width>
+                     <width>70</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>90</width>
+                     <width>70</width>
                      <height>30</height>
                     </size>
                    </property>
@@ -272,7 +296,7 @@ border-image: url(:/images/images/background.png);
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font-size: 11px;
+                    <string notr="true">font-size: 12px;
 color: rgba(167, 211, 243);</string>
                    </property>
                    <property name="text">
@@ -300,8 +324,8 @@ color: rgba(167, 211, 243);</string>
                    <property name="styleSheet">
                     <string notr="true">background-color: rgba(167, 211, 243, 0.1);
 border: 0px solid rgba(167, 211, 243, 0.1);
-color: rgba(167, 211, 243, 0.8);
-font-size: 11px;</string>
+color: rgba(167, 211, 243);
+font-size: 12px;</string>
                    </property>
                    <property name="frame">
                     <bool>true</bool>
@@ -345,14 +369,14 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                <widget class="QFrame" name="frame_5">
                 <property name="minimumSize">
                  <size>
-                  <width>700</width>
-                  <height>550</height>
+                  <width>600</width>
+                  <height>570</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>700</width>
-                  <height>550</height>
+                  <width>600</width>
+                  <height>570</height>
                  </size>
                 </property>
                 <property name="frameShape">
@@ -375,13 +399,13 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                   <widget class="QLabel" name="label_4">
                    <property name="minimumSize">
                     <size>
-                     <width>420</width>
+                     <width>480</width>
                      <height>32</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>420</width>
+                     <width>480</width>
                      <height>32</height>
                     </size>
                    </property>
@@ -393,8 +417,8 @@ QPushButton:hover{background-color:rgba(255,255,255,0.5);}
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgba(167, 211, 243, 0.7);
-font-size: 11px;
+                    <string notr="true">color: rgba(167, 211, 243, 0.8);
+font-size: 12px;
 letter-spacing: 14px;</string>
                    </property>
                    <property name="text">
@@ -409,13 +433,13 @@ letter-spacing: 14px;</string>
                   <widget class="QStackedWidget" name="stackedWidget">
                    <property name="minimumSize">
                     <size>
-                     <width>420</width>
+                     <width>480</width>
                      <height>480</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>420</width>
+                     <width>480</width>
                      <height>480</height>
                     </size>
                    </property>
@@ -434,13 +458,13 @@ letter-spacing: 14px;</string>
                    <widget class="QWidget" name="page1">
                     <property name="minimumSize">
                      <size>
-                      <width>420</width>
+                      <width>480</width>
                       <height>480</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>420</width>
+                      <width>480</width>
                       <height>480</height>
                      </size>
                     </property>
@@ -467,13 +491,13 @@ letter-spacing: 14px;</string>
                       <widget class="QPushButton" name="btn_img">
                        <property name="minimumSize">
                         <size>
-                         <width>420</width>
+                         <width>480</width>
                          <height>480</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>420</width>
+                         <width>480</width>
                          <height>480</height>
                         </size>
                        </property>
@@ -492,13 +516,13 @@ letter-spacing: 14px;</string>
                    <widget class="QWidget" name="page2">
                     <property name="minimumSize">
                      <size>
-                      <width>420</width>
+                      <width>480</width>
                       <height>480</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>420</width>
+                      <width>480</width>
                       <height>480</height>
                      </size>
                     </property>
@@ -522,14 +546,14 @@ letter-spacing: 14px;</string>
                       <widget class="QWidget" name="widget_cam" native="true">
                        <property name="minimumSize">
                         <size>
-                         <width>200</width>
-                         <height>280</height>
+                         <width>220</width>
+                         <height>300</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>200</width>
-                         <height>280</height>
+                         <width>220</width>
+                         <height>300</height>
                         </size>
                        </property>
                       </widget>
@@ -1014,8 +1038,20 @@ font-size: 9px;</string>
          </layout>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="1" column="0">
         <widget class="QFrame" name="frame_10">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -1121,35 +1157,7 @@ font-size: 9px;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_9">
-          <item row="0" column="0">
-           <widget class="QFrame" name="frame_12">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <widget class="QFrame" name="frame_7">
-             <property name="geometry">
-              <rect>
-               <x>-20</x>
-               <y>10</y>
-               <width>1585</width>
-               <height>38</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_10"/>
-            </widget>
-           </widget>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_9"/>
         </widget>
        </item>
       </layout>

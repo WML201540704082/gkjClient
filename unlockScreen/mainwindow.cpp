@@ -53,20 +53,17 @@ void MainWindow::screenAdapter()
     ui->verticalLayout_2->setContentsMargins(60 * w_fx, 60 * h_fx, 60 * w_fx, 9 * h_fx);
     ui->verticalLayout_2->setSpacing(30 * h_fx);
     
-    ui->frame->setMinimumSize(1800 * w_fx, 76 * h_fx);
-    ui->frame->setMaximumSize(1800 * w_fx, 76 * h_fx);
-    
-    ui->label->setMinimumSize(193 * w_fx, 76 * h_fx);
-    ui->label->setMaximumSize(193 * w_fx, 76 * h_fx);
+    ui->frame->setMinimumSize(1800 * w_fx, 86 * h_fx);
+    ui->frame->setMaximumSize(1800 * w_fx, 86 * h_fx);
     
     ui->gridLayout_2->setVerticalSpacing(67 * h_fx);
     
     
-    ui->frame_3->setMinimumSize(700 * w_fx, 600 * h_fx);
-    ui->frame_3->setMaximumSize(700 * w_fx, 600 * h_fx);
+    ui->frame_3->setMinimumSize(700 * w_fx, 650 * h_fx);
+    ui->frame_3->setMaximumSize(700 * w_fx, 550 * h_fx);
     
-    ui->stackedWidget_2->setMinimumSize(700 * w_fx, 600 * h_fx);
-    ui->stackedWidget_2->setMaximumSize(700 * w_fx, 600 * h_fx);
+    ui->stackedWidget_2->setMinimumSize(700 * w_fx, 700 * h_fx);
+    ui->stackedWidget_2->setMaximumSize(700 * w_fx, 700 * h_fx);
     
     ui->verticalLayout->setContentsMargins(9 * w_fx, 0 * h_fx, 9 * w_fx, 9 * h_fx);
     ui->verticalLayout->setSpacing(16 * h_fx);
@@ -76,8 +73,8 @@ void MainWindow::screenAdapter()
     
     ui->horizontalLayout_2->setSpacing(6 * w_fx);
     
-    ui->label_3->setMinimumSize(90 * w_fx, 30 * h_fx);
-    ui->label_3->setMaximumSize(90 * w_fx, 30 * h_fx);
+    ui->label_3->setMinimumSize(70 * w_fx, 30 * h_fx);
+    ui->label_3->setMaximumSize(70 * w_fx, 30 * h_fx);
     QFont font = ui->label_3->font();
     font.setPointSize(12 * w_fx);
     ui->label_3->setFont(font);
@@ -88,32 +85,32 @@ void MainWindow::screenAdapter()
     ui->btn_refresh->setMinimumSize(30 * w_fx, 30 * h_fx);
     ui->btn_refresh->setMaximumSize(30 * w_fx, 30 * h_fx);
     
-    ui->frame_5->setMinimumSize(700 * w_fx, 550 * h_fx);
-    ui->frame_5->setMaximumSize(700 * w_fx, 550 * h_fx);
+    ui->frame_5->setMinimumSize(700 * w_fx, 570 * h_fx);
+    ui->frame_5->setMaximumSize(700 * w_fx, 570 * h_fx);
     
     ui->gridLayout_3->setContentsMargins(9 * w_fx, 0 * h_fx, 9 * w_fx, 24 * h_fx);
     ui->gridLayout_3->setVerticalSpacing(16 * h_fx);
     
-    ui->stackedWidget->setMinimumSize(420 * w_fx, 480 * h_fx);
-    ui->stackedWidget->setMaximumSize(420 * w_fx, 480 * h_fx);
+    ui->stackedWidget->setMinimumSize(480 * w_fx, 480 * h_fx);
+    ui->stackedWidget->setMaximumSize(480 * w_fx, 480 * h_fx);
     
-    ui->page1->setMinimumSize(420 * w_fx, 480 * h_fx);
-    ui->page1->setMaximumSize(420 * w_fx, 480 * h_fx);
+    ui->page1->setMinimumSize(480 * w_fx, 480 * h_fx);
+    ui->page1->setMaximumSize(480 * w_fx, 480 * h_fx);
     
-    ui->label_4->setMinimumSize(420 * w_fx, 32 * h_fx);
-    ui->label_4->setMaximumSize(420 * w_fx, 32 * h_fx);
+    ui->label_4->setMinimumSize(480 * w_fx, 32 * h_fx);
+    ui->label_4->setMaximumSize(480 * w_fx, 32 * h_fx);
     font = ui->label_4->font();
     font.setPointSize(20 * w_fx);
     ui->label_4->setFont(font);
     
-    ui->btn_img->setMinimumSize(420 * w_fx, 480 * w_fx);
-    ui->btn_img->setMaximumSize(420 * w_fx, 480 * w_fx);
+    ui->btn_img->setMinimumSize(480 * w_fx, 480 * w_fx);
+    ui->btn_img->setMaximumSize(480 * w_fx, 480 * w_fx);
     font = ui->btn_img->font();
     font.setPointSize(10 * w_fx);
     ui->btn_img->setFont(font);
     
-    ui->page2->setMinimumSize(420 * w_fx, 480 * h_fx);
-    ui->page2->setMaximumSize(420 * w_fx, 480 * h_fx);
+    ui->page2->setMinimumSize(480 * w_fx, 480 * h_fx);
+    ui->page2->setMaximumSize(480 * w_fx, 480 * h_fx);
     
     ui->page3->setMinimumSize(520 * w_fx, 600 * h_fx);
     ui->page3->setMaximumSize(520 * w_fx, 600 * h_fx);
@@ -124,8 +121,8 @@ void MainWindow::screenAdapter()
     ui->frame_6->setMinimumSize(600 * w_fx, 64 * h_fx);
     ui->frame_6->setMaximumSize(600 * w_fx, 64 * h_fx);
     
-    ui->page->setMinimumSize(700 * w_fx, 560 * h_fx);
-    ui->page->setMaximumSize(700 * w_fx, 560 * h_fx);
+    ui->page->setMinimumSize(700 * w_fx, 580 * h_fx);
+    ui->page->setMaximumSize(700 * w_fx, 580 * h_fx);
     
     ui->verticalLayout_3->setSpacing(10 * h_fx);
     
@@ -179,8 +176,8 @@ void MainWindow::screenAdapter()
     
     ui->horizontalLayout_3->setSpacing(16 * h_fx);
     
-    ui->btn_pwdlogin->setMaximumSize(80 * w_fx, 22 * h_fx);
-    ui->btn_pwdlogin->setMinimumSize(80 * w_fx, 22 * h_fx);
+    ui->btn_pwdlogin->setMaximumSize(80 * w_fx, 27 * h_fx);
+    ui->btn_pwdlogin->setMinimumSize(80 * w_fx, 27 * h_fx);
     font = ui->btn_pwdlogin->font();
     font.setPointSize(6 * w_fx);
     ui->btn_pwdlogin->setFont(font);
